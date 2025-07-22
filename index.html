@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مدرسة الحمدانية الابتدائية - تأسست 1969</title>
+    <style>
+        :root {
+            --primary-color: #2c5e92;
+            --secondary-color: #e8b923;
+            --dark-color: #1a3a5a;
+            --light-color: #f5f5f5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg') center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo img {
+            height: 80px;
+            margin-left: 15px;
+        }
+        
+        .logo-text h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo-text p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        nav {
+            background-color: var(--dark-color);
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 1rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+        }
+        
+        .hero {
+            height: 500px;
+            background: url('https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 2rem;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 0.7rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #d4a61c;
+            transform: translateY(-2px);
+        }
+        
+        .news-ticker {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.8rem 0;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .news-ticker h3 {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            padding: 0.3rem 1rem;
+            margin-right: 1rem;
+            font-size: 1rem;
+        }
+        
+        .ticker-content {
+            display: inline-block;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+        }
+        
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            margin: 0.5rem auto 0;
+        }
+        
+        .about {
+            display: flex;
+            align-items: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            padding: 1rem;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .poem {
+            background-color: #f0f7ff;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-right: 5px solid var(--secondary-color);
+            text-align: center;
+        }
+        
+        .poem p {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+        
+        .poem-author {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .staff {
+            margin: 3rem 0;
+        }
+        
+        .director {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .director img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .news {
+            margin: 3rem 0;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .news-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .news-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .news-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 1.5rem;
+        }
+        
+        .news-date {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .news-content h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        /* أنماط قسم النتائج الجديدة */
+        .results {
+            background-color: #f8f9fa;
+            padding: 3rem 0;
+        }
+
+        .grades-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .grade-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+        .grade-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .grade-card::after {
+            content: "↗";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+        }
+
+        .grade-icon img {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1rem;
+        }
+
+        .grade-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .grade-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .monthly-results {
+            margin-top: 3rem;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 3rem 0 1.5rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            padding: 1rem;
+            text-align: right;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .footer-section h3::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 50%;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-section ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.3rem 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .ticker-content {
+                animation: ticker 15s linear infinite;
+            }
+
+            .grades-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="https://img.icons8.com/color/96/000000/school.png" alt="شعار المدرسة">
+                <div class="logo-text">
+                    <h1>مدرسة الحمدانية الابتدائية المختلطة</h1>
+                    <p>تأسست عام 1969 - صرح تعليمي عريق</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#about">عن المدرسة</a></li>
+            <li><a href="#director">مدير المدرسة</a></li>
+            <li><a href="#results">نتائج الطلاب</a></li>
+            <li><a href="#monthly-results">النتائج الشهرية</a></li>
+            <li><a href="#news">أخبار المدرسة</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
+    </nav>
+    
+    <div class="news-ticker">
+        <h3>أخبار اليوم:</h3>
+        <div class="ticker-content">
+            | بدء التسجيل للعام الدراسي الجديد 2023-2024 | حفل تكريم المتفوقين يوم الخميس القادم | ورشة عمل لأولياء الأمور حول التعلم عن بعد | فريق المدرسة يفوز ببطولة المنطقة في كرة القدم |
+        </div>
+    </div>
+    
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>مدرسة الحمدانية الابتدائية</h2>
+            <p>صرح تعليمي عريق تأسس عام 1969، خرّج أجيالاً من القادة والمفكرين والمبدعين</p>
+            <a href="#about" class="btn">تعرف على المزيد</a>
+        </div>
+    </section>
+    
+    <div class="container">
+        <section id="about">
+            <h2 class="section-title">عن مدرستنا العريقة</h2>
+            <div class="about">
+                <div class="about-text">
+                    <p>تأسست مدرسة الحمدانية الابتدائية عام 1969 لتكون منارة للعلم والمعرفة في المنطقة. على مدى أكثر من خمسة عقود، ظلت المدرسة تقدم تعليماً متميزاً يواكب التطورات مع الحفاظ على القيم والأصالة.</p>
+                    <p>خرّجت المدرسة الآلاف من الطلاب الذين تقلدوا مناصب رفيعة في مختلف المجالات، مما يجعلها فخراً للتعليم في المنطقة. تتميز المدرسة بكادر تدريسي متمرس وبيئة تعليمية محفزة تهدف إلى تنمية مهارات الطلاب العلمية والاجتماعية.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="مبنى المدرسة">
+                </div>
+            </div>
+            
+            <div class="poem">
+                <p>مدرسةٌ كالشّمسِ في الأفـقِ تـشرقُ</p>
+                <p>وبـنـورِ العـلـمِ تـزهـو وتـبـهـجُ</p>
+                <p>خمسـونَ عـامـاً وهـيَ الـعـلمُ رايـةٌ</p>
+                <p>تـسـمـو بـهـا فـي الـعـليـاءِ الـمـنـبـجُ</p>
+                <p class="poem-author">- الشاعر معروف الرصافي</p>
+            </div>
+        </section>
+        
+        <section class="staff" id="director">
+            <h2 class="section-title">مدير المدرسة</h2>
+            <div class="director">
+                <img src="mr.jpg" alt="مدير المدرسة">
+                <h3>الأستاذ مثنى حامد الحمداني</h3>
+                <p>مدير مدرسة الحمدانية الابتدائية تولى المنصب عام 2024</p>
+                <p>خبير تربوي مع أكثر من 25 عاماً من الخبرة في مجال التعليم</p>
+            </div>
+        </section>
+
+        <!-- قسم النتائج الفصلية -->
+        <section class="results" id="results">
+            <h2 class="section-title">نتائج الطلاب الفصلية</h2>
+            <div class="grades-grid">
+                <div class="grade-card" onclick="downloadResult('first')">
+                    <div class="grade-icon">
+                        <img src="https://img.icons8.com/color/96/000000/1-circle.png" alt="الصف الأول">
+                    </div>
+                    <h3>الصف الأول الابتدائي</h3>
+                    <p>نتائج الفصل الدراسي الأول والثاني</p>
+                </div>
+                
+                <div class="grade-card" onclick="downloadResult('second')">
+                    <div class="grade-icon">
+                        <img src="https://img.icons8.com/color/96/000000/2-circle.png" alt="الصف الثاني">
+                    </div>
+                    <h3>الصف الثاني الابتدائي</h3>
+                    <p>نتائج الفصل الدراسي الأول والثاني</p>
+                </div>
+                
+                <div class="grade-card" onclick="downloadResult('third')">
+                    <div class="grade-icon">
+                        <img src="https://img.icons8.com/color/96/000000/3-circle.png" alt="الصف الثالث">
+                    </div>
+                    <h3>الصف الثالث الابتدائي</h3>
+                    <p>نتائج الفصل الدراسي الأول والثاني</p>
+                </div>
+                
+                <div class="grade-card" onclick="downloadResult('fourth')">
+                    <div class="grade-icon">
+                        <img src="https://img.icons8.com/color/96/000000/4-circle.png" alt="الصف الرابع">
+                    </div>
+                    <h3>الصف الرابع الابتدائي</h3>
+                    <p>نتائج الفصل الدراسي الأول والثاني</p>
+                </div>
+                
+                <div class="grade-card" onclick="downloadResult('fifth')">
+                    <div class="grade-icon">
+                        <img src="https://img.icons8.com/color/96/000000/5-circle.png" alt="الصف الخامس">
+                    </div>
+                    <h3>الصف الخامس الابتدائي</h3>
+                    <p>نتائج الفصل الدراسي الأول والثاني</p>
+                </div>
+
+                <div class="grade-card" onclick="downloadResult('sixth')">
+                    <div class="grade-icon">
+                        <img src="https://img.icons8.com/color/96/000000/6-circle.png" alt="الصف السادس">
+                    </div>
+                    <h3>الصف السادس الابتدائي</h3>
+                    <p>نتائج الفصل الدراسي الأول والثاني</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- قسم النتائج الشهرية -->
+        <section class="results monthly-results" id="monthly-results">
+            <h2 class="section-title">النتائج الشهرية</h2>
+            <div class="grades-grid">
+                <div class="grade-card" onclick="downloadMonthlyResult('first')">
+                    <div class="grade-icon">
+                        <img src="https://img.icons8.com/color/96/000000/1-circle.png" alt="الصف الأول">
+                    </div>
+                    <h3>الصف الأول الابتدائي</h3>
+                    <p>النتائج الشهرية للعام الدراسي</p>
+                </div>
+                
+                <div class="grade-card" onclick="downloadMonthlyResult('second')">
+                    <div class="grade-icon">
+                        <img src="https://img.icons8.com/color/96/000000/2-circle.png" alt="الصف الثاني">
+                    </div>
+                    <h3>الصف الثاني الابتدائي</h3>
+                    <p>النتائج الشهرية للعام الدراسي</p>
+                </div>
+                
+                <div class="grade-card" onclick="downloadMonthlyResult('third')">
+                    <div class="grade-icon">
+                        <img src="https://img.icons8.com/color/96/000000/3-circle.png" alt="الصف الثالث">
+                    </div>
+                    <h3>الصف الثالث الابتدائي</h3>
+                    <p>النتائج الشهرية للعام الدراسي</p>
+                </div>
+                
+                <div class="grade-card" onclick="downloadMonthlyResult('fourth')">
+                    <div class="grade-icon">
+                        <img src="https://img.icons8.com/color/96/000000/4-circle.png" alt="الصف الرابع">
+                    </div>
+                    <h3>الصف الرابع الابتدائي</h3>
+                    <p>النتائج الشهرية للعام الدراسي</p>
+                </div>
+                
+                <div class="grade-card" onclick="downloadMonthlyResult('fifth')">
+                    <div class="grade-icon">
+                        <img src="https://img.icons8.com/color/96/000000/5-circle.png" alt="الصف الخامس">
+                    </div>
+                    <h3>الصف الخامس الابتدائي</h3>
+                    <p>النتائج الشهرية للعام الدراسي</p>
+                </div>
+
+                <div class="grade-card" onclick="downloadMonthlyResult('sixth')">
+                    <div class="grade-icon">
+                        <img src="https://img.icons8.com/color/96/000000/6-circle.png" alt="الصف السادس">
+                    </div>
+                    <h3>الصف السادس الابتدائي</h3>
+                    <p>النتائج الشهرية للعام الدراسي</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="news" id="news">
+            <h2 class="section-title">أخبار ومناسبات المدرسة</h2>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="خبر">
+                    </div>
+                    <div class="news-content">
+                        <p class="news-date">15 أكتوبر 2023</p>
+                        <h3>حفل تكريم الطلاب المتفوقين للفصل الأول</h3>
+                        <p>برعاية السيد مدير المدرسة، أقيم حفل تكريم للطلاب المتفوقين في الفصل الدراسي الأول بحضور أولياء الأمور.</p>
+                        <a href="#" class="btn">اقرأ المزيد</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80" alt="خبر">
+                    </div>
+                    <div class="news-content">
+                        <p class="news-date">5 أكتوبر 2023</p>
+                        <h3>المدرسة تحتفل باليوم العالمي للمعلم</h3>
+                        <p>احتفلت المدرسة باليوم العالمي للمعلم بتكريم الكادر التدريسي وتقديم فقرات فنية من إعداد الطلاب.</p>
+                        <a href="#" class="btn">اقرأ المزيد</a>
+                    </div>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1542621334-a254cf47733d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="خبر">
+                    </div>
+                    <div class="news-content">
+                        <p class="news-date">20 سبتمبر 2023</p>
+                        <h3>انطلاق العام الدراسي الجديد 2023-2024</h3>
+                        <p>انطلق العام الدراسي الجديد في مدرسة الحمدانية الابتدائية بحماس وتفاؤل، مع تطبيق جميع الإجراءات الاحترازية.</p>
+                        <a href="#" class="btn">اقرأ المزيد</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>معلومات الاتصال</h3>
+                <p>العنوان: بغداد,ابو غريب,الحمدانية الاولئ</p>
+                <p>هاتف: 07815534701</p>
+                <p>البريد الإلكتروني:yacobyacob911@gmail.com</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="#home">الرئيسية</a></li>
+                    <li><a href="#about">عن المدرسة</a></li>
+                    <li><a href="#director">مدير المدرسة</a></li>
+                    <li><a href="#results">نتائج الفصلية</a></li>
+                    <li><a href="#monthly-results">النتائج الشهرية</a></li>
+                    <li><a href="#news">أخبار المدرسة</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>مواعيد الدوام</h3>
+                <p>من الأحد إلى الخميس</p>
+                <p>من 8:00 صباحاً إلى 12:00 ظهراً</p>
+                <p>يوم الجمعة والسبت إجازة</p>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>جميع الحقوق محفوظة &copy; مدرسة الحمدانية الابتدائية 2025</p>
+        </div>
+    </footer>
+    
+    <script>
+        // روابط النتائج الفصلية (يمكنك استبدالها بروابطك الخاصة)
+        const termResultsLinks = {
+            first: 'https://drive.google.com/file/d/6Lr8pEXAMPLE6/view?usp=sharing',
+            second: 'https://drive.google.com/file/d/2Gx4kEXAMPLE2/view?usp=sharing',
+            third: 'https://drive.google.com/file/d/3Hy5mEXAMPLE3/view?usp=sharing',
+            fourth: 'https://drive.google.com/file/d/4Jz6nEXAMPLE4/view?usp=sharing',
+            fifth: 'https://drive.google.com/file/d/5Kq7oEXAMPLE5/view?usp=sharing',
+            sixth: 'https://drive.google.com/file/d/6Lr8pEXAMPLE6/view?usp=sharing'
+        };
+
+        // روابط النتائج الشهرية (يمكنك استبدالها بروابطك الخاصة)
+        const monthlyResultsLinks = {
+            first: 'https://drive.google.com/file/d/6Lr8pEXAMPLE6/view?usp=sharing',
+            second: 'https://example.com/monthly/grade2',
+            third: 'https://example.com/monthly/grade3',
+            fourth: 'https://example.com/monthly/grade4',
+            fifth: 'https://example.com/monthly/grade5',
+            sixth: 'https://example.com/monthly/grade6'
+        };
+
+        // دالة تحميل النتائج الفصلية
+        function downloadResult(grade) {
+            const url = termResultsLinks[grade];
+            if (url) {
+                window.open(url, '_blank');
+            } else {
+                alert('الرابط غير متوفر حالياً لنتائج ' + getGradeName(grade));
+            }
+        }
+
+        // دالة تحميل النتائج الشهرية
+        function downloadMonthlyResult(grade) {
+            const url = monthlyResultsLinks[grade];
+            if (url) {
+                window.open(url, '_blank');
+            } else {
+                alert('الرابط غير متوفر حالياً للنتائج الشهرية ل' + getGradeName(grade));
+            }
+        }
+
+        // دالة مساعدة للحصول على اسم الصف
+        function getGradeName(grade) {
+            const grades = {
+                'first': 'الصف الأول الابتدائي',
+                'second': 'الصف الثاني الابتدائي',
+                'third': 'الصف الثالث الابتدائي',
+                'fourth': 'الصف الرابع الابتدائي',
+                'fifth': 'الصف الخامس الابتدائي',
+                'sixth': 'الصف السادس الابتدائي'
+            };
+            return grades[grade];
+        }
+
+        // تغيير لون شريط الأخبار حسب المناسبات
+        const newsTicker = document.querySelector('.news-ticker');
+        const occasions = [
+            { color: '#2c5e92', textColor: 'white' },
+            { color: '#e8b923', textColor: '#1a3a5a' },
+            { color: '#2ecc71', textColor: 'white' },
+            { color: '#e74c3c', textColor: 'white' }
+        ];
+        
+        let currentOccasion = 0;
+        
+        function changeOccasion() {
+            newsTicker.style.backgroundColor = occasions[currentOccasion].color;
+            newsTicker.style.color = occasions[currentOccasion].textColor;
+            currentOccasion = (currentOccasion + 1) % occasions.length;
+        }
+        
+        // تغيير المناسبة كل 10 ثواني
+        setInterval(changeOccasion, 10000);
+        
+        // تأثير التمرير السلس للروابط
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // إضافة تأثير عند التمرير
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            const header = document.querySelector('header');
+            header.style.padding = scrollPosition > 100 ? '0.5rem 0' : '1rem 0';
+        });
+    </script>
+</body>
+</html>
